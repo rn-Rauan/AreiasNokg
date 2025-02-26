@@ -1,4 +1,7 @@
-class MaquinaDeEventos {
+import { Aluno } from "../classes/alunos";
+import { Refeitorio } from "../classes/refeitorio";
+
+export class MaquinaDeEventos {
     evento: Evento[] = [];
     instanteDeSimulacao: number = 0;
 
