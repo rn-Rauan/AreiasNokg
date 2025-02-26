@@ -1,6 +1,6 @@
-import { MaquinaDeEventos } from "../eventos/maquinadeeventos";
-import { Aluno } from "./alunos";
-import { Refeitorio } from "./refeitorio";
+import { MaquinaDeEventos } from "./maquinadeeventos";
+import { Aluno } from "../classes/alunos";
+import { Refeitorio } from "../classes/refeitorio";
 
 export class ConcluirRefeicao extends Evento {
     aluno: Aluno;
