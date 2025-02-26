@@ -1,7 +1,4 @@
-import { Aluno } from "../classes/alunos";
-import { Refeitorio } from "../classes/refeitorio";
-
-export class ConcluirRefeicao extends Evento {
+class ConcluirRefeicao extends Evento {
     aluno: Aluno;
 
     constructor(timeStamp: number, refeitorio: Refeitorio, maquina: MaquinaDeEventos, aluno: Aluno) {
