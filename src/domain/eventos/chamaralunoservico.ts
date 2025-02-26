@@ -1,8 +1,9 @@
 import { Aluno } from "../classes/alunos";
 import { ChamarAlunoMesa } from "./chamarAlunoMesa";
 import { DesbloquarCatraca } from "./desbloquearcatraca";
+import { Evento } from "./evento";
 
-export class ChamarAlunoServico extends Event {
+export class ChamarAlunoServico extends Evento {
     processarEvento(): void {
         console.log(`Evento - ChamarAlunoServico - Time:${this.timeStamp}`);
 

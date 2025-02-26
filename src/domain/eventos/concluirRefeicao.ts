@@ -1,10 +1,12 @@
 
+import { Aluno } from "../classes/alunos";
+import { Refeitorio } from "../classes/refeitorio";
 import { MaquinaDeEventos } from "../eventos/maquinadeeventos";
-import { Aluno } from "./alunos";
 import { DesbloquearServico } from "./desbloquearservico";
-import { Refeitorio } from "./refeitorio";
+import { Evento } from "./evento";
 
-export class ConcluirRefeicao extends Event {
+
+export class ConcluirRefeicao extends Evento {
     aluno: Aluno;
 
     constructor(timeStamp: number, refeitorio: Refeitorio, maquina: MaquinaDeEventos, aluno: Aluno) {
@@ -17,7 +19,7 @@ export class ConcluirRefeicao extends Event {
 
         // Remove o aluno da mesa após a refeição
         this.refeitorio.removerAlunoDaMesa(this.aluno);
-        refeitorio.setAlunosQueSairam(this.aluno);
+        this.refeitorio.setAlunosQueSairam(this.aluno);
 
 
         // Se o serviço estava bloqueado, agenda o desbloqueio

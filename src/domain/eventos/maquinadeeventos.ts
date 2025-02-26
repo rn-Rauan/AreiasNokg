@@ -1,6 +1,6 @@
-import { Aluno } from "../classes/alunos";
-import { Refeitorio } from "../classes/refeitorio";
-import { ChamarAlunoParaCatraca } from "./chamarAlunoParaCatraca";
+import { Evento } from "./evento";
+
+
 
 export class MaquinaDeEventos {
     evento: Evento[] = [];

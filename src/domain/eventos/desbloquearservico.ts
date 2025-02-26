@@ -1,6 +1,7 @@
 import { ChamarAlunoServico } from "./chamaralunoservico";
+import { Evento } from "./evento";
 
-export class DesbloquearServico extends Event {
+export class DesbloquearServico extends Evento {
     processarEvento(): void {
         console.log(`Evento - DesbloquearServico - Time:${this.timeStamp}`);
 

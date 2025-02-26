@@ -1,3 +1,6 @@
+import { Refeitorio } from "../classes/refeitorio";
+import { MaquinaDeEventos } from "./maquinadeeventos";
+
 export abstract class Evento {
     protected timeStamp: number;
     protected refeitorio: Refeitorio;
