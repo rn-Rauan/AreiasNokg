@@ -1,4 +1,11 @@
-class Refeitorio {
+import { Aluno } from "./alunos";
+import { Catraca } from "./catraca";
+import { FilaExterna } from "./filaexterna";
+import { FilaInterna } from "./filainterna";
+import { RepositorioDeMesas } from "./repositoriodemesas";
+import { Servico } from "./servico";
+
+export class Refeitorio {
     filaExterna: FilaExterna;
     catraca: Catraca;
     filaInterna: FilaInterna;

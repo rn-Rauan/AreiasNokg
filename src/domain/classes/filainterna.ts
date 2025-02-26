@@ -1,4 +1,7 @@
-class FilaInterna extends FilaExterna {
+import { Aluno } from "./alunos";
+import { FilaExterna } from "./filaexterna";
+
+export class FilaInterna extends FilaExterna {
     limite: number;
 
     constructor(limite: number) {

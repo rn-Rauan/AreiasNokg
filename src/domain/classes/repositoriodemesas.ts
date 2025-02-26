@@ -1,7 +1,9 @@
+import { Mesa } from "./mesa";
+
 /**
  * Classe RepositorioDeMesas que gerencia a criação e controle das mesas do refeitório.
  */
-class RepositorioDeMesas {
+export class RepositorioDeMesas {
     mesa: Mesa[] = [];
     quantidadeDeMesas: number;
 

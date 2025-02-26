@@ -1,7 +1,9 @@
+import { Aluno } from "./alunos";
+
 /**
  * Classe Servico que representa o serviço de atendimento ao aluno.
  */
-class Servico {
+export class Servico {
     private aluno: Aluno | undefined;
     private tempoParaServir: number;
     private bloqueado: boolean = false;

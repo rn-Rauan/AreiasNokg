@@ -1,4 +1,6 @@
-class FilaExterna {
+import { Aluno } from "./alunos";
+
+export class FilaExterna {
     protected fila: Aluno[] = [];
 
     // Adiciona um aluno na fila externa
