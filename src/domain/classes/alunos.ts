@@ -1,4 +1,4 @@
-class Aluno {
+export class Aluno {
     private chegadaNaFilaExterna: number | undefined;
     private chegadaNaCatraca: number | undefined;
     private chegadaNaFilaInterna: number | undefined;
