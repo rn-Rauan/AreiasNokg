@@ -1,4 +1,6 @@
-class DesbloquearServico extends Evento {
+import { ChamarAlunoServico } from "./chamaralunoservico";
+
+export class DesbloquearServico extends Event {
     processarEvento(): void {
         console.log(`Evento - DesbloquearServico - Time:${this.timeStamp}`);
 

@@ -1,8 +1,9 @@
 import { Aluno } from "../classes/alunos";
 import { Refeitorio } from "../classes/refeitorio";
+import { ChamarAlunoParaCatraca } from "./chamarAlunoParaCatraca";
 import { MaquinaDeEventos } from "./maquinadeeventos";
 
-class ChegadaAluno extends Evento {
+export class ChegadaAluno extends Event {
     private aluno: Aluno;
 
     constructor(timeStamp: number, refeitorio: Refeitorio, maquinaDeEventos: MaquinaDeEventos, aluno: Aluno) {

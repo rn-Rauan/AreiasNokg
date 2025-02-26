@@ -1,5 +1,6 @@
 import { Aluno } from "../classes/alunos";
 import { Refeitorio } from "../classes/refeitorio";
+import { ChamarAlunoParaCatraca } from "./chamarAlunoParaCatraca";
 
 export class MaquinaDeEventos {
     evento: Evento[] = [];
@@ -39,7 +40,7 @@ export class MaquinaDeEventos {
 }
 
 
-abstract class Evento {
+export abstract class Evento {
     protected timeStamp: number;
     protected refeitorio: Refeitorio;
     protected maquinaEventos: MaquinaDeEventos;
@@ -58,7 +59,7 @@ abstract class Evento {
     abstract processarEvento(): void;
 }
 
-class ChegadaAluno extends Evento {
+export class ChegadaAluno extends Evento {
     private aluno: Aluno;
 
     constructor(timeStamp: number, refeitorio: Refeitorio, maquinaDeEventos: MaquinaDeEventos, aluno: Aluno) {

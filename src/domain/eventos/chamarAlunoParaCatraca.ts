@@ -1,4 +1,7 @@
-class ChamarAlunoParaCatraca extends Evento {
+import { Aluno } from "../classes/alunos";
+import { ChegadaAlunoFilaInterna } from "./chegadaAlunoFilaInterna";
+
+export class ChamarAlunoParaCatraca extends Event {
     processarEvento(): void {
         console.log(`Evento - ChamarAlunoParaCatraca - Time:${this.timeStamp}`);
 

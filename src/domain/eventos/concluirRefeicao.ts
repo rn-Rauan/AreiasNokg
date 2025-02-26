@@ -1,8 +1,9 @@
 import { MaquinaDeEventos } from "../eventos/maquinadeeventos";
 import { Aluno } from "./alunos";
+import { DesbloquearServico } from "./desbloquearservico";
 import { Refeitorio } from "./refeitorio";
 
-export class ConcluirRefeicao extends Evento {
+export class ConcluirRefeicao extends Event {
     aluno: Aluno;
 
     constructor(timeStamp: number, refeitorio: Refeitorio, maquina: MaquinaDeEventos, aluno: Aluno) {

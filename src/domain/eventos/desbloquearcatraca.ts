@@ -1,4 +1,6 @@
-class DesbloquarCatraca extends Evento {
+import { ChamarAlunoParaCatraca } from "./chamarAlunoParaCatraca";
+
+export class DesbloquarCatraca extends Event {
     processarEvento(): void {
         console.log(`Evento - DesbloquearCatraca - Time:${this.timeStamp}`);
 
