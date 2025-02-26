@@ -1,39 +1,87 @@
-**Use your preferred IDE**
+# Simulador de Fluxo de Refeitório (SFR)
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 📌 Visão Geral
+O **Simulador de Fluxo de Refeitório (SFR)** é um sistema que modela o fluxo de alunos em um refeitório universitário. O objetivo é permitir a configuração de parâmetros operacionais e a análise estatística dos resultados, auxiliando na identificação de gargalos, eficiência e tempo médio de atendimento.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 🎯 Objetivo
+Criar uma simulação detalhada do funcionamento de um refeitório, incluindo:
+- Entrada e controle de fluxo de alunos.
+- Tempo de permanência nas filas e mesas.
+- Atendimento dos funcionários.
+- Visualização dos resultados através de tabelas e gráficos.
 
-Follow these steps:
+## 🏗️ Arquitetura e Tecnologias Utilizadas
+O projeto segue uma arquitetura em camadas e utiliza as seguintes tecnologias:
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+| Categoria | Tecnologia |
+|-----------|----------------|
+| **Linguagem** | TypeScript |
+| **Framework Frontend** | React |
+| **Estilização** | Tailwind CSS |
+| **Servidor de Desenvolvimento** | Vite |
+| **Gráficos** | Recharts |
+| **Armazenamento** | localStorage |
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+## 📂 Estrutura do Projeto
+```
+📁 simulador-fluxo-refeitorio-ifpi
+ ├── 📁 src
+ │   ├── 📁 adapter
+ │   ├── 📁 domain
+ │   ├── 📁 view
+ │   ├── App.tsx
+ │   ├── index.tsx
+ │   └── main.tsx
+ ├── package.json
+ ├── README.md
+ ├── tsconfig.json
+ └── vite.config.ts
 ```
 
-## What technologies are used for this project?
+## 🛠️ Requisitos Funcionais
+- Criar, editar, listar e excluir simulações.
+- Configurar parâmetros como limite de filas, tempo médio de atendimento, etc.
+- Executar a simulação com base em eventos discretos.
+- Exibir os resultados da simulação através de tabelas e gráficos.
 
-This project is built with .
+## 🔐 Requisitos Não Funcionais
+- Interface intuitiva e responsiva.
+- Tempo de resposta inferior a 2 segundos.
+- Persistência de dados no **localStorage** e possibilidade de armazenamento em nuvem.
+- Controle de acesso por login e senha (opcional).
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## ⚡ Processo de Desenvolvimento
+Utilizamos **Scrum** como metodologia ágil, seguindo ciclos de **sprints** de 2 semanas:
 
-## Implementation Instructions
+| Sprint | Período | Atividades |
+|--------|---------|------------|
+| Sprint 1 | 29/jan – 11/fev | Definição de requisitos, setup do ambiente, primeiros protótipos |
+| Sprint 2 | 12/fev – 25/fev | Implementação avançada, testes e refinamento |
 
-The code in this repository is not complete; you must fork it and implement the simulation repository and the simulation engine. These classes are mocked in the project as SimulationRepositoryMock and MockSimulator, which are located in the following files: src/domain/data-management/simulation-repository.ts and src/domain/simulation-engine/mock-simulator.ts. Replace these classes with fully implemented versions.
+## 🧪 Ferramentas de Apoio
+- **Git/GitHub** para controle de versão.
+- **Trello/Jira** para gestão de tarefas.
+- **Jest/Cypress** para testes automatizados.
+- **SonarQube** para análise da qualidade do código.
+- **Slack/Teams** para comunicação.
 
-- Simulation Engine: You must implement the entire simulation logic, considering the parameters and metrics established in the SimulationParameters and SimulationResults classes.
-- Simulation Repository: You must implement the SimulationRepositoryI interface with the methods save, getById, getAll, and delete.
+## 🚀 Como Executar o Projeto
+1. Clone este repositório:
+   ```sh
+   git clone https://github.com/rn-Rauan/AreiasNokg
+   ```
+2. Acesse a pasta do projeto:
+   ```sh
+   cd simulador-fluxo-refeitorio-ifpi
+   ```
+3. Instale as dependências:
+   ```sh
+   npm install
+   ```
+4. Inicie o servidor de desenvolvimento:
+   ```sh
+   npm run dev
+   ```
 
+## 📜 Licença
+Este projeto está licenciado sob a **MIT License**.
