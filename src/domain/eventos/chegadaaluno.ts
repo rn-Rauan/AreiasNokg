@@ -1,3 +1,7 @@
+import { Aluno } from "../classes/alunos";
+import { Refeitorio } from "../classes/refeitorio";
+import { MaquinaDeEventos } from "./maquinadeeventos";
+
 class ChegadaAluno extends Evento {
     private aluno: Aluno;
 

@@ -1,4 +1,8 @@
-class ConcluirRefeicao extends Evento {
+import { MaquinaDeEventos } from "../eventos/maquinadeeventos";
+import { Aluno } from "./alunos";
+import { Refeitorio } from "./refeitorio";
+
+export class ConcluirRefeicao extends Evento {
     aluno: Aluno;
 
     constructor(timeStamp: number, refeitorio: Refeitorio, maquina: MaquinaDeEventos, aluno: Aluno) {
