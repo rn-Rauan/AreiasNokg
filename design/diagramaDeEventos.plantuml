@@ -1,0 +1,56 @@
+@startuml
+
+class MaquinaDeEventos {
+    - evento: Evento[]
+    - instanteDeSimulacao: number
+    + processarEventos(): void
+    + adicionarEvento(novoEvento: Evento): void
+    - atualizarInstanteDeSimulacao(novoInstanteSimulacao: number): void
+}
+
+abstract class Evento {
+    - timeStamp: number
+    - refeitorio: Refeitorio
+    - maquinaEventos: MaquinaDeEventos
+    + getTimeStamp(): number
+    + processarEvento(): void
+}
+
+class ChegadaAluno extends Evento {
+    - aluno: Aluno
+    + processarEvento(): void
+}
+
+class ChamarAlunoParaCatraca extends Evento {
+    + processarEvento(): void
+}
+
+class ChegadaAlunoFilaInterna extends Evento {
+    + processarEvento(): void
+}
+
+class ChamarAlunoServico extends Evento {
+    + processarEvento(): void
+}
+
+class ChamarAlunoMesa extends Evento {
+    + processarEvento(): void
+}
+
+class ConcluirRefeicao extends Evento {
+    - aluno: Aluno
+    + processarEvento(): void
+}
+
+class DesbloquearServico extends Evento {
+    + processarEvento(): void
+}
+
+class DesbloquarCatraca extends Evento{
+    + processarEvento(): void
+}
+
+MaquinaDeEventos "1" *-- "*" Evento
+
+
+@enduml

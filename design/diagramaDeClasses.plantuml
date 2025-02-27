@@ -1,0 +1,106 @@
+@startuml
+
+class Aluno {
+    - chegadaNaFilaExterna: number | undefined
+    - chegadaNaCatraca: number | undefined
+    - chegadaNaFilaInterna: number | undefined
+    - chegadaNoAtendimento: number | undefined
+    - tempoDigitarMatricula: number
+    - tempoDeOcupacaoDaMesa: number
+    + registrarChegadaNaFilaExterna(momento: number): void
+    + registrarChegadaNaFilaInterna(momento: number): void
+    + registrarChegadaNaCatraca(momento: number): void
+    + registrarChegadaNoAtendimento(momento: number): void
+    + getTempoNaFilaExterna(): number
+    + getTempoNaFilaInterna(): number
+    + getTempoDigitarMatricula(): number
+    + getTempoOcupacaoMesa(): number
+}
+
+class Catraca {
+    - aluno: Aluno | undefined
+    - bloqueada: boolean
+    + adicionarAluno(aluno: Aluno): void
+    + removerAluno(): Aluno
+    + temAlguem(): boolean
+    + bloquearCatraca(): void
+    + desbloquearCatraca(): void
+    + catracaBloqueada(): boolean
+}
+
+class FilaExterna {
+    - fila: Aluno[]
+    + adicionarAluno(aluno: Aluno): void
+    + removerAluno(): Aluno
+    + getTamanhoDaFila(): number
+    + filaVazia(): boolean
+}
+
+class FilaInterna extends FilaExterna {
+    - limite: number
+    + adicionarAluno(aluno: Aluno): void
+    + removerAluno(): Aluno
+    + filaCheia(): boolean
+}
+
+class Mesa {
+    - aluno: Aluno | undefined
+    + adicionarAluno(aluno: Aluno): void
+    + removerAluno(): void
+    + mesaOcupada(): boolean
+    + getAluno(): Aluno | undefined
+}
+
+class RepositorioDeMesas {
+    - mesa: Mesa[]
+    - quantidadeDeMesas: number
+    + createAllMesas(quantidadeDeMesas: number): void
+    + createNewMesa(): Mesa
+}
+
+class Servico {
+    - aluno: Aluno | undefined
+    - tempoParaServir: number
+    - bloqueado: boolean
+    + adicionarAluno(aluno: Aluno): void
+    + removerAluno(): Aluno
+    + temAluno(): boolean
+    + getTempoParaServir(): number
+    + getBloqueado(): boolean
+    + setBloquearServico(): void
+    + desbloquearServico(): void
+}
+
+class Refeitorio {
+    - filaExterna: FilaExterna
+    - catraca: Catraca
+    - filaInterna: FilaInterna
+    - servico: Servico
+    - repositorioDeMesas: RepositorioDeMesas
+    - alunosQueSairam: Aluno[]
+    + chegadaDoAluno(aluno: Aluno): boolean
+    + moverAlunoCatraca(): Aluno
+    + moverParaFilaInterna(): Aluno
+    + adicionarNoServico(): Aluno
+    + adicionarAlunoNaMesa(): Aluno
+    + removerAlunoDaMesa(aluno: Aluno): Aluno
+    + filaExternaVazia(): boolean
+    + algumaMesaLivre(): boolean
+    + getFilaInternaCheia(): boolean
+    + bloquearCatraca(): void
+    + desbloquearCatraca(): void
+    + getTamanhoFilaInterna(): number
+    + setAlunosQueSairam(aluno: Aluno): void
+    + getAlunosQueSairam(): Aluno[]
+    + getTempoDeServir(): number
+}
+
+Refeitorio --> FilaExterna
+Refeitorio --> Catraca
+Refeitorio --> FilaInterna
+Refeitorio --> Servico
+Refeitorio --> RepositorioDeMesas
+RepositorioDeMesas --> Mesa
+Aluno --> Refeitorio
+
+@enduml
